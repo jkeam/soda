@@ -4,7 +4,7 @@ import java.text.*
 import groovy.json.JsonSlurper
 import groovy.grape.Grape
 
-def showdate(args) {
+def prompt(args) {
   def help = "Define your dependencies in a file named package.json and your invoked file will have those dependencies included."
   def cli = new CliBuilder(usage: 'soda.groovy')
   cli.with {
@@ -50,5 +50,5 @@ def process(script) {
 }
 
 //main
-showdate(args)
+prompt(args)
 
