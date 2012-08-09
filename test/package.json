@@ -1,0 +1,6 @@
+{
+  "dependencies":[
+    {"group":"commons-primitives", "id":"commons-primitives", "version":"1.0"},
+    {"group":"org.mortbay.jetty", "id":"jetty-embedded", "version":"6.1.0"}
+  ]
+}
