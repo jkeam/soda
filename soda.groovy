@@ -44,15 +44,11 @@ def process(script) {
     evaluate(new File(script)) 
 
   } catch(Exception e) {
-    println e
-    println e.message
     println "Error opening file, please make sure package.json exists and is well-formed."
-   
-    org.codehaus.groovy.runtime.StackTraceUtils.printSanitizedStackTrace(e)
+    println e
   }
 }
 
 //main
 showdate(args)
-//process()
 
