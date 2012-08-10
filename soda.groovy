@@ -31,14 +31,7 @@ def prompt(args) {
 
 }
 
-def processTest(script) {
-  def loader = new GroovyClassLoader(getClass().getClassLoader())
-  def testClass = loader.parseClass(new File(script))
-  println testClass
-  junit.textui.TestRunner.run(testClass)
-}
-
-def process(script) {
+def load() {
   def dir = System.getProperty("user.dir")
   try {
     def contents = ""
@@ -51,13 +44,24 @@ def process(script) {
       Grape.grab([group:it.group, module:it.id, version:it.version])
     }
 
-    //call script
-    evaluate(new File(script)) 
 
   } catch(Exception e) {
     println "Error opening file, please make sure package.json exists and is well-formed."
     println e
   }
+}
+
+def processTest(script) {
+  load()
+  def loader = new GroovyClassLoader(getClass().getClassLoader())
+  def testClass = loader.parseClass(new File(script))
+  println testClass
+  junit.textui.TestRunner.run(testClass)
+}
+
+def process(script) {
+  load()
+  evaluate(new File(script)) 
 }
 
 //main
