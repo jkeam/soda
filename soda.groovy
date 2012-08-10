@@ -41,7 +41,30 @@ def load() {
     
     def result = new JsonSlurper().parseText contents
     result.dependencies.each { it ->
-      Grape.grab([group:it.group, module:it.id, version:it.version])
+      def group = it.group
+      if (group == null) {
+        group = it.groupId
+        if (group == null) {
+          group = it.org
+        }
+      }
+
+      def id = it.id
+      if (id == null) {
+        id = it.module
+        if (id == null) {
+          id = it.artifactId
+          if (id == null) {
+            id = it.name
+          }
+        }
+      }
+     
+      def version = it.version
+      if (version == null) {
+        version == it.rev
+      }
+      Grape.grab([group:group, module:id, version:version])
     }
 
 

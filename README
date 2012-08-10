@@ -30,3 +30,21 @@ Executable
 Test
 1.  cd to test
 2.  ../soda.groovy -t ./carbinationTest.groovy
+
+
+package.json
+-----------------
+This is where the dependencies are defined.  The file contains a single JSON object with a single attribute, "dependencies", which is an array of objects.  These objects all contain three attributes: group, id, and version.  You can either use maven, ivy, grape or a mix of these to specify these attributes.
+
+Below are the three attributes along with all of the valid values.  The list for each attribute is ordered in terms of their preference.  So the first term (for example, group's first preferred term is 'group') is the most preferred.
+
+Group: 
+  group, groupId, org
+
+Id:
+  id, module, artifactId, name
+
+Version:
+  version, rev
+
+For an example, look at test/package.json
