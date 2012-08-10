@@ -6,21 +6,22 @@ Simply clone this repo to get the soda.groovy script.
 
 Usage
 -----------------
-Go ahead and run ./soda.groovy (assuming groovy and grape are in your path)
+Go ahead and run ./soda.groovy (assuming groovy and grape are in your path) with no args to see the help.
 
-You will see a quick explaination along with two options, one for help which is the same as running with no options, and one for running with the -f <filename> option.
 
-To run:
+To run executable:
 1.  cd to where your groovy script is (the one you want the dependencies to be included with), lets call it carbination.groovy
 2.  create a package.json with your dependencies
-3.  run soda.groovy -f ./carbination.groovy 
+3.  run soda.groovy -e ./carbination.groovy 
 
 *Doesn't matter where soda.groovy is as long as you can see and run it, but you must be in the same dir as your file (carbination.groovy) and your package.json
 
+To run tests:
+If instead you have tests that you want to run (tests that extend GroovyTestCase), run it with the -t option.
+soda.groovy -t ./tests.groovy
+
 Example
 -----------------
-My test is a good example of how to use soda.
-
-To run:
+Executable
 1.  cd to test
-2.  ../soda.groovy -f ./test.groovy
+2.  ../soda.groovy -e ./carbination.groovy
