@@ -4,12 +4,12 @@ Installation
 -----------------
 Simply clone this repo to get the soda.groovy script.
 
+
 Usage
 -----------------
 Go ahead and run ./soda.groovy (assuming groovy and grape are in your path) with no args to see the help.
 
-
-To run executable:
+To run executables:
 1.  cd to where your groovy script is (the one you want the dependencies to be included with), lets call it carbination.groovy
 2.  create a package.json with your dependencies
 3.  run soda.groovy -e ./carbination.groovy 
@@ -20,8 +20,13 @@ To run tests:
 If instead you have tests that you want to run (tests that extend GroovyTestCase), run it with the -t option.
 soda.groovy -t ./tests.groovy
 
-Example
+
+Examples
 -----------------
 Executable
 1.  cd to test
 2.  ../soda.groovy -e ./carbination.groovy
+
+Test
+1.  cd to test
+2.  ../soda.groovy -t ./carbinationTest.groovy
