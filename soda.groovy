@@ -9,7 +9,8 @@ def prompt(args) {
   def cli = new CliBuilder(usage: 'soda.groovy')
   cli.with {
     h longOpt: 'help', 'Show usage'
-    f longOpt: 'file', args:1, argName:'filename', 'Select file to run'
+    e longOpt: 'exec', args:1, argName:'executable', 'Select executable to run'
+    t longOpt: 'test', args:1, argName:'testfile', 'Select testfile to run'
   }
 
   def options = cli.parse(args)
@@ -17,14 +18,24 @@ def prompt(args) {
     println help
     cli.usage()
   }
-  else if(options.f) {
-    process(options.f)
+  else if (options.e) {
+    process(options.e)
+  }
+  else if (options.t) {
+     processTest(options.t)
   }
   else {
     println help
     cli.usage()
   }
 
+}
+
+def processTest(script) {
+  def loader = new GroovyClassLoader(getClass().getClassLoader())
+  def testClass = loader.parseClass(new File(script))
+  println testClass
+  junit.textui.TestRunner.run(testClass)
 }
 
 def process(script) {
