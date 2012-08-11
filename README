@@ -2,34 +2,34 @@ This is sorta like Bundler for Ruby.  Groovy has a neat dependency management to
 
 Installation
 -----------------
-Simply clone this repo to get the soda.groovy script.
+Simply clone this repo.
 
 
 Usage
 -----------------
-Go ahead and run ./soda.groovy (assuming groovy and grape are in your path) with no args to see the help.
+Go ahead and run ./soda (assuming groovy and grape are in your path) with no args to see the help.
 
 To run executables:
 1.  cd to where your groovy script is (the one you want the dependencies to be included with), lets call it carbination.groovy
 2.  create a package.json with your dependencies
-3.  run soda.groovy -e ./carbination.groovy 
+3.  run soda -e ./carbination.groovy 
 
-*Doesn't matter where soda.groovy is as long as you can see and run it, but you must be in the same dir as your file (carbination.groovy) and your package.json
+*Doesn't matter where soda is as long as you can see and run it, but you must be in the same dir as your file (carbination.groovy) and your package.json
 
 To run tests:
 If instead you have tests that you want to run (tests that extend GroovyTestCase), run it with the -t option.
-soda.groovy -t ./tests.groovy
+soda -t ./tests.groovy
 
 
 Examples
 -----------------
 Executable
 1.  cd to test
-2.  ../soda.groovy -e ./carbination.groovy
+2.  ../soda -e ./carbination.groovy
 
 Test
 1.  cd to test
-2.  ../soda.groovy -t ./carbinationTest.groovy
+2.  ../soda -t ./carbinationTest.groovy
 
 
 package.json
