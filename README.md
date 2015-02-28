@@ -46,3 +46,6 @@ Below are the three attributes along with all of the valid values.  The list for
   version, rev
 
 For an example, look at test/package.json
+
+## Issues
+1.  Not tested and most likely won't work correctly on a Windows machine.
