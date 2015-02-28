@@ -9,6 +9,7 @@ Simply clone this repo.
 Go ahead and run ./soda (assuming groovy and grape are in your path) with no args to see the help.
 
 To run executables:
+
 1.  cd to where your groovy script is (the one you want the dependencies to be included with), lets call it carbination.groovy
 2.  create a package.json with your dependencies
 3.  run soda -e ./carbination.groovy 
